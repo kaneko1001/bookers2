@@ -32,7 +32,7 @@
                 </li>
                 <li class="nav-item">
                   <!--user一覧-->
-                  <%= link_to 'User', user_path, class: 'nav-link text-light' %>
+                  <%= link_to 'User', users_path, class: 'nav-link text-light' %>
                 </li>
                 <li class="nav-item">
                   <!--投稿一覧-->
@@ -63,5 +63,18 @@
       </nav>
     </header>
     <%= yield %>
+    <main>
+
+    </main>
+    <!--フッター-->
+    <footer class="bg-light text-dark pt-5 pb-4">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="mx-auto">
+            <p>CopyRight Infratop.inc</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
