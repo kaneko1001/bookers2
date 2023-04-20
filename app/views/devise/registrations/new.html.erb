@@ -1,9 +1,21 @@
+
 <div class="container">
   <div class="row">
     <div class="mx-light">
       <h2>Sign up</h2>
 
       <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user' do |f| %>
+        <!--エラー-->
+        <div id="field-error">
+          <% if @user.errors.any? %>
+            <h3><%= @user.errors.count %> errors prohibited this obj from being saved:</h3>
+            <ul>
+              <% @user.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          <% end %>
+        </div>
 
         <div class="field">
           <%= f.label :name %><br />

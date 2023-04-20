@@ -1,0 +1,218 @@
+  6) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 編集リンクのテスト 編集画面 に遷移する
+     Failure/Error: expect(current_path).to eq '/books/' + book.id.to_s + '/edit'
+
+       expected: "/books/1/edit"
+            got: "/users/2"
+
+       (compared using ==)
+     # ./spec/system/02_after_login_spec.rb:179:in `block (4 levels) in <main>'
+
+  7) [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 表示の確認 URLが正しい
+     Failure/Error: expect(current_path).to eq '/books/' + book.id.to_s + '/edit'
+
+       expected: "/books/1/edit"
+            got: "/users/2"
+
+       (compared using ==)
+     # ./spec/system/02_after_login_spec.rb:214:in `block (4 levels) in <main>'
+
+  8) [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 表示の確認 「Editing Book」 と表示される
+     Failure/Error: expect(page).to have_content 'Editing Book'
+       expected to find text "Editing Book" in "Bookers\nHome User Books Log out\nuser info\nname pl3wjv214q introduction 7lw6ggu69runsw5h16k9\nNew book\nTitle\nOpinion\nBooks\nTitle Opinion iwzsh ko0rvus5jcaejo24r7c2\nCopyRight Infratop.inc"
+     # ./spec/system/02_after_login_spec.rb:217:in `block (4 levels) in <main>'
+
+  9) [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 表示の確認 title編集フォームが表示される
+     Failure/Error: expect(page).to have_field 'book[title]', with: book.title
+       expected to find visible field "book[title]" that is not disabled with value "zydi6" but there were no matches. Also found "", which matched the selector but not all filters. Expected value to be "zydi6" but was nil
+     # ./spec/system/02_after_login_spec.rb:220:in `block (4 levels) in <main>'
+
+  10) [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 表示の確認 body編集フォームが表示される
+      Failure/Error: expect(page).to have_field 'book[body]', with: book.body
+        expected to find visible field "book[body]" that is not disabled with value "ywx7wbgqqpl1zmrarcf1" but there were no matches. Also found "", which matched the selector but not all filters. Expected value to be "ywx7wbgqqpl1zmrarcf1" but was ""
+      # ./spec/system/02_after_login_spec.rb:223:in `block (4 levels) in <main>'
+
+  11) [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 表示の確認 Update Bookボタ ンが表示される
+      Failure/Error: expect(page).to have_button 'Update Book'
+        expected to find button "Update Book" that is not disabled but there were no matches
+      # ./spec/system/02_after_login_spec.rb:226:in `block (4 levels) in <main>'
+
+  12) [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 表示の確認 Showリンクが表示される
+      Failure/Error: expect(page).to have_link 'Show', href: book_path(book)
+        expected to find link "Show" with href "/books/1" but there were no matches
+      # ./spec/system/02_after_login_spec.rb:229:in `block (4 levels) in <main>'
+
+  13) [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 表示の確認 Backリンクが表示される
+      Failure/Error: expect(page).to have_link 'Back', href: books_path
+        expected to find link "Back" with href "/books" but there were no matches
+      # ./spec/system/02_after_login_spec.rb:232:in `block (4 levels) in <main>'
+
+  14) [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 編集成功のテスト titleが正 しく更新される
+      Failure/Error: click_button 'Update Book'
+
+      Capybara::ElementNotFound:
+        Unable to find button "Update Book" that is not disabled
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/finders.rb:312:in `block in synced_resolve'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/base.rb:84:in `synchronize'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/finders.rb:301:in `synced_resolve'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/finders.rb:60:in `find'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/actions.rb:58:in `click_button'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/session.rb:773:in `click_button'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/dsl.rb:52:in `call'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/dsl.rb:52:in `click_button'
+      # ./spec/system/02_after_login_spec.rb:242:in `block (4 levels) in <main>'
+
+  15) [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 編集成功のテスト bodyが正しく更新される
+      Failure/Error: click_button 'Update Book'
+
+      Capybara::ElementNotFound:
+        Unable to find button "Update Book" that is not disabled
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/finders.rb:312:in `block in synced_resolve'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/base.rb:84:in `synchronize'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/finders.rb:301:in `synced_resolve'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/finders.rb:60:in `find'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/actions.rb:58:in `click_button'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/session.rb:773:in `click_button'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/dsl.rb:52:in `call'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/dsl.rb:52:in `click_button'
+      # ./spec/system/02_after_login_spec.rb:242:in `block (4 levels) in <main>'
+
+  16) [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 編集成功のテスト リダイレクト先が、更新した投稿の詳細画面になっている
+      Failure/Error: click_button 'Update Book'
+
+      Capybara::ElementNotFound:
+        Unable to find button "Update Book" that is not disabled
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/finders.rb:312:in `block in synced_resolve'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/base.rb:84:in `synchronize'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/finders.rb:301:in `synced_resolve'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/finders.rb:60:in `find'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/actions.rb:58:in `click_button'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/session.rb:773:in `click_button'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/dsl.rb:52:in `call'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/dsl.rb:52:in `click_button'
+      # ./spec/system/02_after_login_spec.rb:242:in `block (4 levels) in <main>'
+
+  17) [STEP3] 仕上げのテスト サクセスメッセージのテスト 投稿データの更新成功時
+      Failure/Error: click_button 'Update Book'
+
+      Capybara::ElementNotFound:
+        Unable to find button "Update Book" that is not disabled
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/finders.rb:312:in `block in synced_resolve'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/base.rb:84:in `synchronize'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/finders.rb:301:in `synced_resolve'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/finders.rb:60:in `find'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/actions.rb:58:in `click_button'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/session.rb:773:in `click_button'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/dsl.rb:52:in `call'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/dsl.rb:52:in `click_button'
+      # ./spec/system/03_finishing_touches_spec.rb:64:in `block (3 levels) in <main>'
+
+  18) [STEP3] 仕上げのテスト 処理失敗時のテスト ユーザ新規登録失敗: nameを1文字にする バリデ ーションエラーが表示される
+      Failure/Error: expect(page).to have_content "is too short (minimum is 2 characters)"
+        expected to find text "is too short (minimum is 2 characters)" in "Bookers\nHome About Sign up Sign up\nSign up\nName\nEmail\nPassword (6 characters minimum)\nPassword confirmation\nLog in\nCopyRight Infratop.inc"
+      # ./spec/system/03_finishing_touches_spec.rb:92:in `block (4 levels) in <main>'
+
+  19) [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの更新失敗: titleを空にする 投稿が 更新されない
+      Failure/Error: click_button 'Update Book'
+
+      Capybara::ElementNotFound:
+        Unable to find button "Update Book" that is not disabled
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/finders.rb:312:in `block in synced_resolve'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/base.rb:84:in `synchronize'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/finders.rb:301:in `synced_resolve'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/finders.rb:60:in `find'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/actions.rb:58:in `click_button'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/session.rb:773:in `click_button'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/dsl.rb:52:in `call'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/dsl.rb:52:in `click_button'
+      # ./spec/system/03_finishing_touches_spec.rb:159:in `block (4 levels) in <main>'
+
+  20) [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの更新失敗: titleを空にする 投稿編 集画面を表示しており、フォームの内容が正しい
+      Failure/Error: click_button 'Update Book'
+
+      Capybara::ElementNotFound:
+        Unable to find button "Update Book" that is not disabled
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/finders.rb:312:in `block in synced_resolve'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/base.rb:84:in `synchronize'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/finders.rb:301:in `synced_resolve'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/finders.rb:60:in `find'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/actions.rb:58:in `click_button'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/session.rb:773:in `click_button'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/dsl.rb:52:in `call'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/dsl.rb:52:in `click_button'
+      # ./spec/system/03_finishing_touches_spec.rb:159:in `block (4 levels) in <main>'
+
+  21) [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの更新失敗: titleを空にする エラー メッセージが表示される
+      Failure/Error: click_button 'Update Book'
+
+      Capybara::ElementNotFound:
+        Unable to find button "Update Book" that is not disabled
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/finders.rb:312:in `block in synced_resolve'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/base.rb:84:in `synchronize'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/finders.rb:301:in `synced_resolve'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/finders.rb:60:in `find'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/node/actions.rb:58:in `click_button'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/session.rb:773:in `click_button'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/dsl.rb:52:in `call'
+      # /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.39.0/lib/capybara/dsl.rb:52:in `click_button'
+      # ./spec/system/03_finishing_touches_spec.rb:159:in `block (4 levels) in <main>'
+
+  22) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿編集画面 遷移できず、投稿一覧画面にリダイレクトされる
+      Failure/Error: expect(current_path).to eq '/books'
+
+        expected: "/books"
+             got: "/books/2/edit"
+
+        (compared using ==)
+      # ./spec/system/03_finishing_touches_spec.rb:263:in `block (4 levels) in <main>'
+
+  23) [STEP3] 仕上げのテスト グリッドシステムのテスト: container, row, col-md-〇を正しく使え ている ユーザ一覧画面
+      Failure/Error: is_expected.to have_selector '.container .row .col-md-3'
+        expected to find css ".container .row .col-md-3" but there were no matches
+      # ./spec/system/03_finishing_touches_spec.rb:329:in `block (3 levels) in <main>'
+
+  24) [STEP3] 仕上げのテスト グリッドシステムのテスト: container, row, col-md-〇を正しく使え ている ユーザ詳細画面
+      Failure/Error: is_expected.to have_selector '.container .row .col-md-3'
+        expected to find css ".container .row .col-md-3" but there were no matches
+      # ./spec/system/03_finishing_touches_spec.rb:334:in `block (3 levels) in <main>'
+
+  25) [STEP3] 仕上げのテスト グリッドシステムのテスト: container, row, col-md-〇を正しく使え ている 投稿一覧画面
+      Failure/Error: is_expected.to have_selector '.container .row .col-md-3'
+        expected to find css ".container .row .col-md-3" but there were no matches
+      # ./spec/system/03_finishing_touches_spec.rb:339:in `block (3 levels) in <main>'
+
+  26) [STEP3] 仕上げのテスト グリッドシステムのテスト: container, row, col-md-〇を正しく使え ている 投稿詳細画面
+      Failure/Error: is_expected.to have_selector '.container .row .col-md-3'
+        expected to find css ".container .row .col-md-3" but there were no matches
+      # ./spec/system/03_finishing_touches_spec.rb:344:in `block (3 levels) in <main>'
+
+Finished in 35.64 seconds (files took 2.7 seconds to load)
+199 examples, 26 failures
+
+Failed examples:
+
+rspec ./spec/system/01_before_login_spec.rb:66 # [STEP1] ユーザログイン前のテスト ヘッダーの テスト: ログインしていない場合 表示内容の確認 Log inリンクが表示される: 左上から5番目のリンクが「Log in」である
+rspec ./spec/system/01_before_login_spec.rb:101 # [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしていない場合 リンクの内容を確認 Log inを押すと、ログイン画面に遷移する
+rspec ./spec/system/01_before_login_spec.rb:229 # [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしている場合 ヘッダーの表示を確認 Usersリンクが表示される: 左上から3番目のリ ンクが「Users」である
+rspec ./spec/system/02_after_login_spec.rb:157 # [STEP2] ユーザログイン後のテスト 自分の投稿 詳細画面のテスト サイドバーの確認 bodyフォームに値が入っていない
+rspec ./spec/system/02_after_login_spec.rb:171 # [STEP2] ユーザログイン後のテスト 自分の投稿 詳細画面のテスト 投稿成功のテスト 自分の新しい投稿が正しく保存される
+rspec ./spec/system/02_after_login_spec.rb:177 # [STEP2] ユーザログイン後のテスト 自分の投稿 詳細画面のテスト 編集リンクのテスト 編集画面に遷移する
+rspec ./spec/system/02_after_login_spec.rb:213 # [STEP2] ユーザログイン後のテスト 自分の投稿 編集画面のテスト 表示の確認 URLが正しい
+rspec ./spec/system/02_after_login_spec.rb:216 # [STEP2] ユーザログイン後のテスト 自分の投稿 編集画面のテスト 表示の確認 「Editing Book」と表示される
+rspec ./spec/system/02_after_login_spec.rb:219 # [STEP2] ユーザログイン後のテスト 自分の投稿 編集画面のテスト 表示の確認 title編集フォームが表示される
+rspec ./spec/system/02_after_login_spec.rb:222 # [STEP2] ユーザログイン後のテスト 自分の投稿 編集画面のテスト 表示の確認 body編集フォームが表示される
+rspec ./spec/system/02_after_login_spec.rb:225 # [STEP2] ユーザログイン後のテスト 自分の投稿 編集画面のテスト 表示の確認 Update Bookボタンが表示される
+rspec ./spec/system/02_after_login_spec.rb:228 # [STEP2] ユーザログイン後のテスト 自分の投稿 編集画面のテスト 表示の確認 Showリンクが表示される
+rspec ./spec/system/02_after_login_spec.rb:231 # [STEP2] ユーザログイン後のテスト 自分の投稿 編集画面のテスト 表示の確認 Backリンクが表示される
+rspec ./spec/system/02_after_login_spec.rb:245 # [STEP2] ユーザログイン後のテスト 自分の投稿 編集画面のテスト 編集成功のテスト titleが正しく更新される
+rspec ./spec/system/02_after_login_spec.rb:248 # [STEP2] ユーザログイン後のテスト 自分の投稿 編集画面のテスト 編集成功のテスト bodyが正しく更新される
+rspec ./spec/system/02_after_login_spec.rb:251 # [STEP2] ユーザログイン後のテスト 自分の投稿 編集画面のテスト 編集成功のテスト リダイレクト先が、更新した投稿の詳細画面になっている
+rspec ./spec/system/03_finishing_touches_spec.rb:58 # [STEP3] 仕上げのテスト サクセスメッセージのテスト 投稿データの更新成功時
+rspec ./spec/system/03_finishing_touches_spec.rb:90 # [STEP3] 仕上げのテスト 処理失敗時のテスト ユーザ新規登録失敗: nameを1文字にする バリデーションエラーが表示される
+rspec ./spec/system/03_finishing_touches_spec.rb:162 # [STEP3] 仕上げのテスト 処理失敗時のテ スト 投稿データの更新失敗: titleを空にする 投稿が更新されない
+rspec ./spec/system/03_finishing_touches_spec.rb:165 # [STEP3] 仕上げのテスト 処理失敗時のテ スト 投稿データの更新失敗: titleを空にする 投稿編集画面を表示しており、フォームの内容が正しい
+rspec ./spec/system/03_finishing_touches_spec.rb:170 # [STEP3] 仕上げのテスト 処理失敗時のテ スト 投稿データの更新失敗: titleを空にする エラーメッセージが表示される
+rspec ./spec/system/03_finishing_touches_spec.rb:261 # [STEP3] 仕上げのテスト 他人の画面のテ スト 他人の投稿編集画面 遷移できず、投稿一覧画面にリダイレクトされる
+rspec ./spec/system/03_finishing_touches_spec.rb:327 # [STEP3] 仕上げのテスト グリッドシステ ムのテスト: container, row, col-md-〇を正しく使えている ユーザ一覧画面
+rspec ./spec/system/03_finishing_touches_spec.rb:332 # [STEP3] 仕上げのテスト グリッドシステ ムのテスト: container, row, col-md-〇を正しく使えている ユーザ詳細画面
+rspec ./spec/system/03_finishing_touches_spec.rb:337 # [STEP3] 仕上げのテスト グリッドシステ ムのテスト: container, row, col-md-〇を正しく使えている 投稿一覧画面
+rspec ./spec/system/03_finishing_touches_spec.rb:342 # [STEP3] 仕上げのテスト グリッドシステ ムのテスト: container, row, col-md-〇を正しく使えている 投稿詳細画面
