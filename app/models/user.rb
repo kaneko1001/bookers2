@@ -8,7 +8,6 @@ class User < ApplicationRecord
   validates :introduction, length: { maximum: 50 }
 
   has_many :books, dependent: :destroy
-
   has_one_attached :profile_image
 
   def get_profile_image
@@ -16,6 +15,13 @@ class User < ApplicationRecord
       profile_image
     else
       'no_image.jpg'
+    end
+  end
+
+  def self.guest
+    find_or_create_by!(name: 'guestuser' ,email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.name = "guestuser"
     end
   end
 end
